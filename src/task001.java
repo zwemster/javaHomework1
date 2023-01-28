@@ -9,6 +9,7 @@ public class task001 {
         String name = "John";
         String updatedFile = change(fileContent, name);
         saveOnLocal(updatedFile);
+        read();
     }
 
     public static String download(String fileUrl) {
@@ -47,5 +48,19 @@ public class task001 {
         }
     }
 
+    public static void read(){
+        try {
+            File file = new File("localFile.txt");
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String fileRow;
 
+            while ((fileRow = bufferedReader.readLine()) != null){
+                System.out.println(fileRow);
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            System.out.println("Reading file error: " + e.getMessage());
+        }
+    }
 }
