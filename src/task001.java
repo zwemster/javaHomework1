@@ -32,5 +32,7 @@ public class task001 {
        }
    }
 
-
+    public static String change(String name, String fileContent){
+        return fileContent.replaceAll("%s", name);
+    }
 }
