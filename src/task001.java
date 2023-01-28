@@ -63,4 +63,13 @@ public class task001 {
             System.out.println("Reading file error: " + e.getMessage());
         }
     }
+
+    public static void removeFromLocale(String fileName){
+        File file = new File("localFile.txt");
+        if (file.delete()){
+            System.out.println("File deleted.");
+        } else {
+            System.out.println("Deleting file error.");
+        }
+    }
 }
