@@ -10,6 +10,7 @@ public class task001 {
         String updatedFile = change(fileContent, name);
         saveOnLocal(updatedFile);
         read();
+        removeFromLocale();
     }
 
     public static String download(String fileUrl) {
@@ -34,7 +35,7 @@ public class task001 {
     }
 
     public static String change(String name, String fileContent) {
-        return fileContent.replaceAll("%s", name);
+        return fileContent.replace("%s", name);
     }
 
     public static void saveOnLocal(String fileContent){
@@ -64,7 +65,7 @@ public class task001 {
         }
     }
 
-    public static void removeFromLocale(String fileName){
+    public static void removeFromLocale(){
         File file = new File("localFile.txt");
         if (file.delete()){
             System.out.println("File deleted.");
